@@ -1,3 +1,4 @@
+import encodeURI from "@/utils/encodeURI";
 import Link from "next/link";
 
 export default function CardNotices({ article }) {
@@ -15,8 +16,12 @@ export default function CardNotices({ article }) {
             Link da matéria
           </Link>
         </div>
-        <Link className="btn" href={""}>
-          Mais detalhes
+        <Link
+          className="btn"
+          href={`/detailNotices/${encodeURI(formatTitle(article.title))}`}
+        >
+          {" "}
+          Mais Detalhes
         </Link>
       </div>
     </div>

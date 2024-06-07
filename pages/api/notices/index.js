@@ -9,6 +9,7 @@ export default async function getPost(req, res) {
       }
     );
     const data = await response.json();
+
     const result = {
       articles: data.articles,
       totalResults: data.totalResults,
