@@ -1,7 +1,6 @@
 import encodeURI from "@/utils/encodeURI";
 export default async function handler(req, res) {
   const { id } = req.query;
-  console.log(id);
 
   try {
     const response = await fetch(`https://newsapi.org/v2/everything?q=${id}`, {
