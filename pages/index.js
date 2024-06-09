@@ -24,11 +24,6 @@ export default function Home() {
     fetchNotices();
   }, []);
 
-
-
-
-  console.log(userState.articles)
-
   return (
     <div>
       <h1 className="text-3xl">Artigos em alta</h1>
@@ -40,7 +35,7 @@ export default function Home() {
           </div>
         </span>
       </div>
-      
+
       <div className="flex flex-wrap gap-8 pt-6">
         {userState.isLoading ? (
           <span className="loading loading-dots loading-lg"></span>

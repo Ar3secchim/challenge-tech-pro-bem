@@ -7,7 +7,6 @@ export default async function getCategory(req, res) {
         Authorization: `Bearer ${process.env.API_KEY}`,
       },
     });
-
     const data = await response.json();
 
     res.status(200).json({ article: data.articles, totalArticles: data.totalResults });
