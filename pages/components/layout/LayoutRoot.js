@@ -1,4 +1,4 @@
-import Footer from "../footer/indes";
+import Footer from "../footer";
 import NavBar from "../navBar";
 
 export default function LayoutRoot({ children }) {
