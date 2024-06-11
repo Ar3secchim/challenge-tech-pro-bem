@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function NavBar() {
   return (
-    <div className="navbar bg-base-100 ">
+    <div className="navbar bg-base-300 pr-4 mb-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -23,16 +23,54 @@ export default function NavBar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-200 rounded-box w-52"
           >
             <li>
-              <a>Top artigos</a>
+              <Link href="/">Top artigos</Link>
             </li>
             <li>
-              <a>Artigos recentes</a>
+              <summary>Categorias</summary>
+              <ul className=" bg-base-200 rounded-t-none z-50">
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("technology")}`}>
+                    Tecnologia
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("business")}`}>
+                    Negócios
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("sports")}`}>
+                    Esporte
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("science")}`}>
+                    Ciências
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("entertainment")}`}>
+                    Entretendimento
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("health")}`}>
+                    Saúde
+                  </Link>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>
+
         <Link href={"/"} to="/" className="btn btn-ghost text-xl">
           Blog
         </Link>
@@ -41,34 +79,52 @@ export default function NavBar() {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <a>Top artigos</a>
-          </li>
-          <li>
-            <a>Artigos recentes</a>
+            <Link href="/">Top artigos</Link>
           </li>
 
           <li>
             <details>
               <summary>Categorias</summary>
-              <ul className=" bg-base-100 rounded-t-none z-50">
+              <ul className=" bg-base-300 rounded-t-none z-50">
                 <li>
-                  <a>Link 1</a>
+                  <Link href={`/categoryNotices/${encodeURI("technology")}`}>
+                    Tecnologia
+                  </Link>
                 </li>
+
                 <li>
-                  <a>Link 2</a>
+                  <Link href={`/categoryNotices/${encodeURI("business")}`}>
+                    Negócios
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("sports")}`}>
+                    Esporte
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("science")}`}>
+                    Ciências
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("entertainment")}`}>
+                    Entretendimento
+                  </Link>
+                </li>
+
+                <li>
+                  <Link href={`/categoryNotices/${encodeURI("health")}`}>
+                    Saúde
+                  </Link>
                 </li>
               </ul>
             </details>
           </li>
         </ul>
-      </div>
-
-      <div className="flex items-end navbar-end form-control">
-        <input
-          type="text"
-          placeholder="Search"
-          className="input input-bordered w-24 md:w-auto"
-        />
       </div>
     </div>
   );

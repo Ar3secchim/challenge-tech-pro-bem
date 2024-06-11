@@ -10,10 +10,11 @@ export default function Home() {
 
   useEffect(() => {
     const fetchNotices = async () => {
-      const response = await fetch("/api/notices");
+      let apiUrl = "/api/notices";
+      const response = await fetch(apiUrl);
       const result = await response.json();
 
-      setUserState((prevstage) => ({
+      setUserState((prevState) => ({
         articles: result.articles,
         totalArticles: result.totalResults,
         isLoading: false,
@@ -26,7 +27,6 @@ export default function Home() {
   return (
     <div>
       <h1 className="text-3xl">Artigos em alta</h1>
-
       <div className="py-4">
         <span className="badge badge-ghost p-6">
           Total de artigos:
